@@ -16,6 +16,8 @@ function generatePoem(event) {
     "You are a funny haiku expert. Make sure to follow user inputs and separate each line with a <br />";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+  let poemElement = document.querySelector("#poem");
+  poemElement.innerHTML = "Generating a haiku..";
   axios.get(apiUrl).then(displayPoem);
 }
 
